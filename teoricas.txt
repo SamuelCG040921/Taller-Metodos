@@ -1,0 +1,45 @@
+### Preguntas teóricas
+
+1. ¿Qué es un método en Java?
+Los metodos son en general fracciones de codigo que nos permiten llevar a cabo procedimientos o funciones dentro del mismo,
+esto ayudandonos a una optimizacion del codigo y evitando la redundacia del mismo por su facilidad de llamado a la hora de necesitar
+el procedimiento y retorno que almecene el mismo.
+
+2. ¿Cuáles son los cuatro tipos de métodos en Java?
+Los tipos de metodos en Java son:
+Metodo con retorno y con parametros
+Metodo con retorno y sin parametros
+Metodo sin retorno y con parametros
+Metodo sin retorno y sin parametros
+
+Y el metodo constructor.
+
+3. ¿Cuál es la diferencia entre un método con parámetros y sin retorno y un método sin parámetros y con retorno?
+La diferencia es que mientras que el metodo con parametros y sin retorno recibe ciertos datos para procesar dentro del metodo 
+pero no retorna ningun valor, el metodo sin parametros y con retorno si retorna un valor o lo que nosotros queramos que retorne 
+no recibira valores a procesar.
+
+4. ¿Cuál es la diferencia entre un método con parámetros y con retorno y un método con parámetros y sin retorno?
+La diferencia es que mientras el metodo con parametros y con retorno recibe valores a procesar y tambien devuelve un valor
+el metodo con parametros y sin retorno recibe valores a procesar pero no devuelve o retorna ningun valor.
+
+5. ¿Por qué son importantes los métodos en Java?
+Los metodos en Java son importantes porque como nombre en la respuesta anterior nos permiten agilizar nuestro codigo reutilizando
+los fragmentos de codigo o procesos que decidamos guardar dentro de los metodos, haciendo que nuestros programas sean lo mas cortos
+posibles y ahorrarnos tiempo al momento del desarrollo, tambien que nos dan pie a aplicar algo muy importante como es la modularidad
+en nuestro codigo, haciendolo mas facil de entender y mas ordenado.
+
+6. ¿Qué es una estructura de datos?
+Una estructura de datos es una forma diferente de almacenar los datos para no tener que definir una variable por cada uno, en
+una estructura de datos se pueden almacenar varios datos dentro de una misma, no como las variables que si quisieramos guardar 3 numeros
+por ejemplo el 3 el 5 y el 2 tendriamos que definir una variable por cada una, tambien se definen como formas de organizar los datos en la memoria del sistema.
+
+
+7. ¿Cuál es la diferencia entre un arreglo, un arrayList y un HashMap?
+En general la diferencia primero que todo entre un arreglo y un arrayList es que el arreglo le tenemos que definir un tamaño fijo
+entonces de por si tambien tenems unas posiciones fijas, en cambio en el arrayList no tenemos que definirle un tamaño permitiendonos 
+tener unas posiciones dinamicas, van a tener un tamaño por defecto que podemos aumentar si lo necesitamos y por ultimo para hablar de un HashMap
+primero debemos hablar de un HashTable el cual es otra estructura de dato que se diferencia del arreglo y el arraylist ya que no 
+almacenaria los valores en unas posiciones a las cuales accederemos con unos indices sino que se almacenan los datos identificandose de forma
+clave-valor, es decir llamariamos a los valores mediante la clave o visceversa, esta seria la diferencia entre un HasMap y los arreglos y arraylist tambien 
+ya que los HashMap son lo mismo que un HashTable solo que de una version mas actual de Java y permite almacenar valores nulos tanto en la clave como en el valor.
