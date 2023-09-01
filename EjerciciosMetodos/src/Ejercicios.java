@@ -118,7 +118,14 @@ public class Ejercicios {
 			}
 		}while(opc != 4);
 		}
-	
+	public int[] sumaArreglos(int[] arr1, int[] arr2) {
+        int resultado[] = new int[arr1.length];
+
+        for (int i = 0; i < arr1.length; i++) {
+            resultado[i] = arr1[i] + arr2[i];
+        }
+        return resultado;
+    }
 }
 	
 

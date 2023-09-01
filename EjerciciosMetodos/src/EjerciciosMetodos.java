@@ -31,6 +31,23 @@ public class EjerciciosMetodos {
 		System.out.println("El numero maximo de la lista es: "+numeroMaxList);
 		misEjercicios.diccionario();
 		misEjercicios.estudiantes();
+		int arr1[] = new int[5];
+        int arr3[] = new int[5];
+
+        for (int i = 0; i < arr1.length; i++) {
+            arr1[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero para la suma en la posicion " + i));
+        }
+
+        for (int i = 0; i < arr3.length; i++) {
+            arr3[i] = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero para la suma en la posicion " + i));
+        }
+
+        int sumaArreglos[] = misEjercicios.sumaArreglos(arr1, arr3);
+
+        System.out.print("La suma de los dos arreglos ingresados es: ");
+        for (int num : sumaArreglos) {
+            System.out.print(num + " ");
+        }
 	}
 
 	
