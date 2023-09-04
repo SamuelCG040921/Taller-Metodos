@@ -87,37 +87,62 @@ public class Ejercicios {
 		System.out.println("En espaniol significa: "+diccionario.get(opc));
 	}
 	public void estudiantes() {
-		HashMap<String, Double> estudiantes = new HashMap<String, Double>();
-		String mnsj = "<<<<MENU DE OPCIONES>>>> \n";
-		mnsj+= "1. Agregar estudiante \n";
-		mnsj+= "2. Consultar nota de un estudiante \n";
-		mnsj+= "3. Ver todos los estudiantes \n";
-		mnsj+= "4. Salir \n";
-		mnsj+= "Ingrese su opcion: \n";
-		int opc = Integer.parseInt(JOptionPane.showInputDialog(mnsj));
-		do {
-			switch (opc) {
-			case 1: 
-				estudiantes.put(JOptionPane.showInputDialog("Ingrese el nombre del estudiante: "), Double.parseDouble(JOptionPane.showInputDialog("Ingrese la nota del estudiante")));
-				opc = Integer.parseInt(JOptionPane.showInputDialog(mnsj));
-				break;
-			
-			case 2:
+		HashMap<String, ArrayList<Double>> estudiantes = new HashMap<String, ArrayList<Double>>();
+		String menu = "<<<<OPCIONES>>>>\n";
+    	menu+="1. Agregar estudiantes\n";
+    	menu+="2. Consultar Notas\n";
+    	menu+="3. Salir\n";
+    	menu+="Ingrese una opción";
+    	int opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
+    	String nombre;
+    	ArrayList<Double> notasList;
+    	do {
+			switch (opcion) {
+			case 1:
+				int cantEst = Integer.parseInt(JOptionPane.showInputDialog("Cuantos estudiantes desea ingresar"));
+				for (int i = 0; i < cantEst; i++) {
+					nombre = JOptionPane.showInputDialog("Ingrese el nombre de el alumno");
+					notasList = new ArrayList<Double>();
+					int cantNot = Integer.parseInt(JOptionPane.showInputDialog("Cuantas notas desea ingresar para " + nombre));
+			    	double nota;
 				
-				JOptionPane.showMessageDialog(null, estudiantes.get(JOptionPane.showInputDialog("Ingrese el nombre del estudiantes")));
-				opc = Integer.parseInt(JOptionPane.showInputDialog(mnsj));
+			    	for (int j = 0; j < cantNot; j++) {
+						nota = Double.parseDouble(JOptionPane.showInputDialog("Ingrese la nota " + (j+1) + " para " + nombre));
+						notasList.add(nota);
+					}
+					estudiantes.put(nombre, notasList);
+					System.out.println(nombre + " = " + notasList);
+				}
+				opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 				break;
-			case 3:
-				JOptionPane.showMessageDialog(null, "Todos sus estudiantes con sus notas son: \n"+estudiantes);
-				opc = Integer.parseInt(JOptionPane.showInputDialog(mnsj));
+				
+			case 2:
+				String nombreConsulta=JOptionPane.showInputDialog("Ingrese el nombre del estudiante a consultar");
+				if (estudiantes.containsKey(nombreConsulta)) {
+					ArrayList<Double> listaNotasTemporales = estudiantes.get(nombreConsulta);
+					System.out.println("Nombre: "+nombreConsulta);
+					
+					double sum=0;
+					System.out.println("Lista de notas: ");
+					for (int i = 0; i < listaNotasTemporales.size(); i++) {
+						System.out.print(listaNotasTemporales.get(i)+",");
+						sum+=listaNotasTemporales.get(i);
+					}
+					
+					double prom=sum/listaNotasTemporales.size();
+					System.out.println("\nEl Promedio es: "+prom);
+				}else {
+					System.out.println("No se encuentra el estudiante: "+nombreConsulta);
+				}
+				opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
 				break;
+
 			default:
-				System.out.println("Ingrese una opcion valida");
-				JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
 				break;
 			}
-		}while(opc != 4);
-		}
+		} while (opcion != 3);
+    }
+		
 	public int[] sumaArreglos(int[] arr1, int[] arr2) {
         int resultado[] = new int[arr1.length];
 
